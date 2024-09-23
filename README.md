@@ -22,6 +22,7 @@
 # Screenshoor Structure Table Transaction Detail
 ![image](https://github.com/user-attachments/assets/80d71894-089d-4be3-ab5c-1776f203dcd6)
 # Screenshoot Seed Table Transaction Detail
+![image](https://github.com/user-attachments/assets/769e1ca1-690c-4dec-a970-b9b19abed422)
 
 
 

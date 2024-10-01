@@ -42,8 +42,9 @@ Setelah transaksi berhasil disimpan, secara otomatis sistem membuat data Transac
 ![image](https://github.com/user-attachments/assets/6469d1a1-469f-4a11-8337-7a083105c6c6)
 ![image](https://github.com/user-attachments/assets/20d34b77-f85a-4685-993d-66caea44445e)
 ### Static Assets
-Digunakan sebagai banner pada index.html
-![image](https://github.com/user-attachments/assets/b30df038-07f5-4b7e-88b2-6c7b4c37e61b)
+Digunakan sebagai banner pada index.html.
+![image](https://github.com/user-attachments/assets/2373ca00-924f-4438-9e86-0bdfe57ad620)
+
 
 
 

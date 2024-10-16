@@ -12,7 +12,8 @@
 
     {% load static %}
 
-    <link rel="stylesheet" href="{% static 'homepage\css\custom.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/css/custom.css' %}?v={{ timestamp }}">
+    <!-- <link rel="stylesheet" href="{% static 'homepage/css/custom.css' %}"> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -42,11 +43,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-semibold {% if menu %}active{% endif %}" href="{% url 'menu' %}">
+                        <a class="nav-link fw-semibold {% if CoffeeList %}active{% endif %}" href="{% url 'CoffeeList' %}">
                             <i class="fa-solid fa-book me-1"></i> Menu
                         </a>
                     </li>
                 </ul>
+
             </div>
         </div>
     </nav>

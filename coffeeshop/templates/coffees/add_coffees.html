@@ -1,0 +1,17 @@
+{% extends 'homepage/layout.html' %}
+{% block title %} Tambah Coffee {% endblock %}
+{% block content %}
+<div class="container">
+    {% if messages %}
+        <div class="alert alert-warning" role="alert">
+            {% for message in messages %}
+                {{ message }}<br>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <form class="needs-validation" style="margin-top: 6em; margin-bottom: 3em;" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% include 'coffees/form.html' %}
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'homepage/layout.html' %}
+{% load humanize %}
+{% load static %}  <!-- Menambahkan ini untuk memuat tag static -->
+
+{% block content %}
+<div class="container">
+    <a href="{% url 'add_coffee' %}" class="btn btn-primary mb-3" style="margin-top: 6em;">Add Coffee</a>
+    <form method="GET" action="{% url 'CoffeeList' %}" class="d-flex mb-3">
+        <input
+            class="form-control me-2"
+            type="search"
+            name="q"
+            placeholder="Search Coffee..."
+            value="{{ query|default:'' }}"
+            aria-label="Search"
+        />
+        <button
+            class="btn btn-secondary my-2 my-sm-0"
+            type="submit"
+            style="background-color: #0092ca; color: #fff; border: none"
+        >
+            Search
+        </button>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="text-align: center;">Image</th>
+                <th style="width: 20%; text-align: center;">Name</th>
+                <th style="width: 30%; text-align: center;">Description</th>
+                <th style="width: 10%; text-align: center;">Price</th>
+                <th style="width: 10%; text-align: center;">Category</th>
+                <th style="text-align: center;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for menu in menus %}
+            <tr>
+                <td>
+                    {% if menu.image %}
+                        <img src="{{ menu.image.url }}" alt="{{ menu.name }}" width="250">
+                    {% else %}
+                        <img src="{% static 'coffees_images/default.jpg' %}" alt="Default Coffee Image" width="250">
+                    {% endif %}
+                </td>
+                <td>{{ menu.name }}</td>
+                <td>{{ menu.description }}</td>
+                <td>Rp {{ menu.price|floatformat:0|intcomma }}</td>
+                <td>{{ menu.category }}</td>
+                <td>
+                    <div class="d-flex gap-2">
+                        <a href="{% url 'coffee_update' menu.id %}" class="btn btn-sm btn-warning">Edit</a>
+                        <button class="btn btn-sm btn-danger" onclick="confirmDelete('{{ menu.id }}')">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7" class="text-center">No coffee data</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+function confirmDelete(coffeeId) {
+    Swal.fire({
+        title: 'Coffee data will be deleted',
+        text: 'Data cannot be returned!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Delete!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`/coffee/delete/${coffeeId}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Coffee data has been successfully deleted.',
+                        'success'
+                    ).then(() => {
+                        window.location.reload();
+                    });
+                } else {
+                    Swal.fire(
+                        'Error!',
+                        'There was a problem deleting coffee data.',
+                        'error'
+                    );
+                }
+            });
+        }
+    });
+}
+</script>
+
+{% endblock %}

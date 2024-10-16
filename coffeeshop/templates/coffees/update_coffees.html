@@ -1,0 +1,14 @@
+{% extends 'homepage/layout.html' %}
+{% block title %} Ubah Coffee {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+        <h1>Edit Coffee: {{ coffee.title }}</h1>
+        <a href="{% url 'CoffeeList' %}" class="btn btn-secondary">Kembali</a>
+    </div>
+    <form class="needs-validation" style="margin-top: 6em; margin-bottom: 3em;" method="POST" enctype="multipart/form-data">  <!-- Tambahkan enctype untuk upload file -->
+        {% csrf_token %}
+        {% include 'coffees/form.html' %}
+    </form>
+</div>
+{% endblock %}

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'coffeeshop',
     'django_bootstrap5',
     'django_seed',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [

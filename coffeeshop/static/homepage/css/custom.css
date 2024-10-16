@@ -17,7 +17,7 @@
     background-repeat: no-repeat; /* Mencegah pengulangan gambar */
     height: 100vh; /* Mengatur tinggi banner sesuai tinggi layar */
     display: flex;
-    align-items: center; /* Mengatur konten di tengah secara vertikal */
+    align-items: center; /*     Mengatur konten di tengah secara vertikal */
     color: white; /* Agar teks terlihat jelas di atas gambar */
   }
   
@@ -57,7 +57,6 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: aqua;
 }
 
 .bg-primary {

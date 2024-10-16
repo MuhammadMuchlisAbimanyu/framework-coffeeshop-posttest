@@ -45,6 +45,19 @@ Setelah transaksi berhasil disimpan, secara otomatis sistem membuat data Transac
 Digunakan sebagai banner pada index.html.
 ![image](https://github.com/user-attachments/assets/2373ca00-924f-4438-9e86-0bdfe57ad620)
 
+## POSTTEST 4
+### Screenshoot Tampilan (Read)
+![screencapture-127-0-0-1-8000-menu-2024-10-16-19_34_14](https://github.com/user-attachments/assets/e2b1bbec-d045-468c-a51e-f12b8adb8550)
+### Screenshoot Tampilan (Create)
+![screencapture-127-0-0-1-8000-Coffees-add-coffees-2024-10-16-19_34_28](https://github.com/user-attachments/assets/47d612e8-64ac-4a75-8b61-7a8fdaa1374a)
+### Screenshoot Tampilan (Edit)
+![screencapture-127-0-0-1-8000-Coffees-44-update-2024-10-16-19_34_42](https://github.com/user-attachments/assets/db114173-32fa-40fe-86ea-1adb75482c72)
+### Screenshoot Tampilan (Search)
+![screencapture-127-0-0-1-8000-menu-2024-10-16-19_34_57](https://github.com/user-attachments/assets/c4d64e05-30c3-4de3-9cf5-1e17f0f7da90)
+
+
+
+
 
 
 
